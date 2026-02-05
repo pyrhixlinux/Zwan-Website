@@ -140,6 +140,28 @@ const categoryBtns = document.querySelectorAll('.category-btn');
 categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         categoryBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
     });
 });
+
+// Scroll Animation Observer
+const observerOptions = {
+    threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => {
+        el.classList.add('ready'); // Prepare for animation
+        observer.observe(el);
+    });
+});
+
+
