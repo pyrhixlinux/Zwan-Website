@@ -3009,12 +3009,28 @@ body {
 }
 
 
+/* Responsive adjustments for Banner */
+@media (max-width: 768px) {
+    .fastwork-section {
+        padding: 2rem 0;
+    }
+    
+    .fw-banner-link {
+        border-radius: 1rem;
+    }
+
+    .fw-banner-overlay {
+        display: none; /* Hide overlay on mobile as it blocks the image */
+    }
+}
+
 /* Animations */
 .animate-on-scroll {
     opacity: 1;
     transform: translateY(0);
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
 
 .animate-on-scroll.visible {
     opacity: 1;
